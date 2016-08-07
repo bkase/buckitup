@@ -1,0 +1,18 @@
+android_resource(
+	name = 'res',
+	res = 'src/main/res',
+	package = 'me.hkr.buckitup2',
+  visibility = [ 'PUBLIC' ],
+  deps = [],
+)
+
+kotlin_library(
+	name = 'app',
+	srcs = glob(['**/*.kt']),
+	visibility = [ 'PUBLIC' ],
+	deps = [
+    ':res'
+  ],
+)
+
+project_config(src_target = ':app')
